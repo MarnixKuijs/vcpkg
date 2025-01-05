@@ -121,6 +121,12 @@
         "vulkan"
       ]
     },
+    "vulkan-binding-no-prototypes": {
+      "description": "Make available Vulkan binding without prototypes",
+      "dependencies": [
+        "vulkan"
+      ]
+    },
     "wchar32": {
       "description": "Use WCHAR32 instead of WCHAR16"
     },
