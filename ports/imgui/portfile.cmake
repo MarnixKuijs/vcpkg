@@ -23,26 +23,27 @@ file(COPY "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt" DESTINATION "${SOURCE_PATH}
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES 
-    allegro5-binding            IMGUI_BUILD_ALLEGRO5_BINDING
-    android-binding             IMGUI_BUILD_ANDROID_BINDING
-    dx9-binding                 IMGUI_BUILD_DX9_BINDING
-    dx10-binding                IMGUI_BUILD_DX10_BINDING
-    dx11-binding                IMGUI_BUILD_DX11_BINDING
-    dx12-binding                IMGUI_BUILD_DX12_BINDING
-    glfw-binding                IMGUI_BUILD_GLFW_BINDING
-    glut-binding                IMGUI_BUILD_GLUT_BINDING
-    metal-binding               IMGUI_BUILD_METAL_BINDING
-    opengl2-binding             IMGUI_BUILD_OPENGL2_BINDING
-    opengl3-binding             IMGUI_BUILD_OPENGL3_BINDING
-    osx-binding                 IMGUI_BUILD_OSX_BINDING
-    sdl2-binding                IMGUI_BUILD_SDL2_BINDING
-    sdl2-renderer-binding       IMGUI_BUILD_SDL2_RENDERER_BINDING
-    vulkan-binding              IMGUI_BUILD_VULKAN_BINDING
-    win32-binding               IMGUI_BUILD_WIN32_BINDING
-    freetype                    IMGUI_FREETYPE
-    freetype-lunasvg            IMGUI_FREETYPE_LUNASVG
-    wchar32                     IMGUI_USE_WCHAR32
-    test-engine                 IMGUI_TEST_ENGINE
+    allegro5-binding             IMGUI_BUILD_ALLEGRO5_BINDING
+    android-binding              IMGUI_BUILD_ANDROID_BINDING
+    dx9-binding                  IMGUI_BUILD_DX9_BINDING
+    dx10-binding                 IMGUI_BUILD_DX10_BINDING
+    dx11-binding                 IMGUI_BUILD_DX11_BINDING
+    dx12-binding                 IMGUI_BUILD_DX12_BINDING
+    glfw-binding                 IMGUI_BUILD_GLFW_BINDING
+    glut-binding                 IMGUI_BUILD_GLUT_BINDING
+    metal-binding                IMGUI_BUILD_METAL_BINDING
+    opengl2-binding              IMGUI_BUILD_OPENGL2_BINDING
+    opengl3-binding              IMGUI_BUILD_OPENGL3_BINDING
+    osx-binding                  IMGUI_BUILD_OSX_BINDING
+    sdl2-binding                 IMGUI_BUILD_SDL2_BINDING
+    sdl2-renderer-binding        IMGUI_BUILD_SDL2_RENDERER_BINDING
+    vulkan-binding               IMGUI_BUILD_VULKAN_BINDING
+    vulkan-binding-no-prototypes IMGUI_BUILD_VULKAN_BINDING_NO_PROTOTYPES
+    win32-binding                IMGUI_BUILD_WIN32_BINDING
+    freetype                     IMGUI_FREETYPE
+    freetype-lunasvg             IMGUI_FREETYPE_LUNASVG
+    wchar32                      IMGUI_USE_WCHAR32
+    test-engine                  IMGUI_TEST_ENGINE
 )
 
 if ("libigl-imgui" IN_LIST FEATURES)

@@ -99,10 +99,13 @@ if(IMGUI_BUILD_SDL2_RENDERER_BINDING)
     target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_sdlrenderer2.cpp)
 endif()
 
-if(IMGUI_BUILD_VULKAN_BINDING)
+if(IMGUI_BUILD_VULKAN_BINDING OR IMGUI_BUILD_VULKAN_BINDING_NO_PROTOTYPES)
     find_package(Vulkan REQUIRED)
     target_link_libraries(${PROJECT_NAME} PUBLIC Vulkan::Vulkan)
     target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_vulkan.cpp)
+    if (IMGUI_BUILD_VULKAN_BINDING_NO_PROTOTYPES)
+            target_compile_definitions(${PROJECT_NAME} PUBLIC IMGUI_IMPL_VULKAN_NO_PROTOTYPES)
+    endif()
 endif()
 
 if(IMGUI_BUILD_WIN32_BINDING)
@@ -237,7 +240,7 @@ if(NOT IMGUI_SKIP_HEADERS)
         install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_sdlrenderer2.h DESTINATION include)
     endif()
 
-    if(IMGUI_BUILD_VULKAN_BINDING)
+    if(IMGUI_BUILD_VULKAN_BINDING OR IMGUI_BUILD_VULKAN_BINDING_NO_PROTOTYPES)
         install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_vulkan.h DESTINATION include)
     endif()
 
